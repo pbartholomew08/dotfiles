@@ -21,3 +21,14 @@ tags
 .project
 .settings
 *.out
+*.ipynb_checkpoints
+*~
+*.lof
+*.lot
+*.tdo
+*.buildScript.sh
+*.doctree
+*.pickle
+.coverage
+htmlcov/
+\#*\#
