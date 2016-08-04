@@ -292,7 +292,7 @@ you should place your code here."
   (global-set-key (kbd "C-S-w") 'kill-buffer) ; ctrl+shift+w to close buffer
 
   ;; Enable auto-insert headers on new file
-  ;(add-hook 'emacs-lisp-mode-hook 'auto-make-header)
+  (add-hook 'emacs-lisp-mode-hook 'auto-make-header)
 
   )
 
