@@ -1,0 +1,69 @@
+" pathogen
+execute pathogen#infect('bundle/{}', '~/src/vimPlugins/{}')
+
+"" Autocompletion
+"set completeopt=longest,menuone
+
+" NERDTree
+
+" YouCompleteMe
+let g:ycm_show_diagnostics_ui=1
+let g:ycm_register_as_syntastic_checker=0
+
+let g:ycm_error_symbol='!E'
+let g:ycm_warning_symbol='!W'
+
+let g:ycm_always_populate_location_list=1
+
+" syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_log_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+
+let g:syntastic_enable_signs=1
+
+ let g:syntastic_c_checkers=['make']
+" let g:syntastic_shell="/bin/dash"
+
+"================================================
+" My things
+
+" Colour scheme
+syntax enable
+"set background=dark
+"let g:solarized_termcolors=256
+"colorscheme solarized
+
+" Tab-widths
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set smarttab
+set expandtab
+
+" Line highlighting
+set cursorline
+
+set number  " Display linenumbers
+
+set mouse=a " Enable mouse
+
+set smartindent " Maintains indentation level
+
+set hlsearch  " Highlight search terms
+
+set wrap lbr  " Wraps lines without breaking words
+
+" Keyboard mapping
+inoremap <C-Space> <C-n>
+inoremap <C-f> <C-\><C-O>:%!astyle<CR>
+nnoremap <C-f> :%!astyle<CR>
+map <C-\> :NERDTreeToggle<CR>
+map <C-b> :! clear && ./.buildScript.sh<CR>
+map <C-]> <C-w><C-]><C-w>T
+
