@@ -54,9 +54,10 @@ values."
             )
      python
      octave
-     semantic
+     ;; semantic
      eyebrowse ;; vim-style tabbed interface?
      header2
+     markdown
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -291,9 +292,25 @@ you should place your code here."
   (global-set-key (kbd "C-S-<next>") 'next-buffer) ; ctrl+shift+pgdn to go to next buffer
   (global-set-key (kbd "C-S-w") 'kill-buffer) ; ctrl+shift+w to close buffer
 
-  ;; Enable auto-insert headers on new file
+  ;; Enable auto-insert headers on new file based on mode hooks
   (add-hook 'emacs-lisp-mode-hook 'auto-make-header)
+  ;(add-hook 'python-mode-hook 'auto-make-header)
 
+  ;; Set my name, for use by header2
+  (setq user-full-name "Paul Bartholomew")
+
+  ;; Backups
+  (setq backup-directory-alist '(("." . "~/BACKUPS/emacs"))) ; Set the backup directory
+  (setq backup-by-copying t) ; Create copies when backing up, helps dealing with symlinks, maybe
+                             ; slow in which case look at backup-by-copying-when-linked.
+  (setq delete-old-versions t
+        kept-new-versions 6
+        kept-old-versions 2
+        version-control t
+        ) ; Maintain a set of version controlled backups
+
+  ;; Magit
+  (global-git-commit-mode t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
