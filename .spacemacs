@@ -287,6 +287,12 @@ you should place your code here."
             'append
             )
 
+  ;; Seem to need to enable line numbers in python
+  (add-hook 'python-mode-hook
+            'spacemacs/toggle-line-numbers-on
+            'append
+            )
+
   ;; Set orgmode agenda files
   (setq org-agenda-files '("~/org"))
 
@@ -314,6 +320,11 @@ you should place your code here."
 
   ;; Magit
   (global-git-commit-mode t)
+  (setq-default git-enable-magit-svn-plugin t) ; Enables git-svn plugin
+
+  ;; diff-hl
+  (setq diff-hl-side 'left)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
