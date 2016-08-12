@@ -325,6 +325,15 @@ you should place your code here."
   ;; diff-hl
   (setq diff-hl-side 'left)
 
+  ;; LaTeX
+  (add-hook 'LaTeX-mode-hook 'server-start)
+  (setq TeX-PDF-mode t) ;; use pdflatex instead of latex
+
+  (setq TeX-source-correlate-method 'synctex)
+  (setq LaTeX-command "latex -synctex=1")
+  (setq TeX-view-program-selection
+        '((output-pdf "PDF Viewer"))
+        )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
