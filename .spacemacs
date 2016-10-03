@@ -286,17 +286,25 @@ you should place your code here."
   ;; Set fill-column
   (setq-default fill-column 100)
 
+  ;; Set tabs by default
+  (setq indent-tabs-mode t)
+
   ;; Disable linum in org-mode
   (add-hook 'org-mode-hook
             'spacemacs/toggle-line-numbers-off
-            'append
-            )
+            'append)
 
   ;; Seem to need to enable line numbers in python
   (add-hook 'python-mode-hook
             'spacemacs/toggle-line-numbers-on
-            'append
-            )
+            'append)
+
+	;; Enable indentation guide in python
+	;(add-hook 'python-mode-hook 'indent-guide-mode)
+
+  ;; Set tabs for python
+  (add-hook 'python-mode-hook
+            (lambda () (setq indent-tabs-mode t)))
 
   ;; Set orgmode agenda files
   (setq org-agenda-files '("~/org"))
@@ -339,6 +347,9 @@ you should place your code here."
   (setq TeX-view-program-selection
         '((output-pdf "PDF Viewer"))
         )
+
+	;; elisp
+	;(add-hook 'emacs-lisp-mode-hook 'indent-guide-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
