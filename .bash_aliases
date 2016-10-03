@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ~/.bash_profile
+
 #alias gmsh=/home/paul/Software/gmsh-2.9.3-Linux/bin/gmsh
 alias gmsh=/home/paul/Software/gmsh-2.10.0-Linux/bin/gmsh
 alias tetgen=/home/paul/Software/tetgen1.5.0/bin/tetgen
@@ -22,3 +24,8 @@ alias lighttable=~/Software/LightTable/LightTable
 alias zotero=~/Software/Zotero_linux-x86_64/zotero
 
 alias clang-format=clang-format-3.4
+
+# ParaView
+alias paraview=${PARAVIEW_HOME}/bin/paraview
+alias pvpython=${PARAVIEW_HOME}/bin/pvpython
+alias pvbatch=${PARAVIEW_HOME}/bin/pvbatch

@@ -17,7 +17,7 @@ export LATEX_HOME=${SRC}/LaTeX
 #export PETSC_DIR=/home/paul/Software/petsc-3.4.5
 export PETSC_DIR=/home/paul/Software/petsc-3.6.0
 export PETSC_ARCH=arch-linux2-c-opt
-export PETSC_OPTIONS="--with-debugging=no --with-errorchecking=no --download-metis --download-parmetis --download-hdf5"
+export PETSC_OPTIONS="--with-shared-libraries --with-debugging=no --with-errorchecking=no --download-metis --download-parmetis --download-hdf5"
 export PETSC_OPTIMISE="COPTFLAGS='-O3 -march=native -mtune=native' CXXOPTFLAGS='-O3 -march=native -mtune=native' FOPTFLAGS='-O3 -march=native -mtune=native'"
 
 # MultiFlow development
@@ -56,4 +56,4 @@ export XKEYSYMDB=$GRIDPRO/az_mngr/XKeysymDB
 export PATH=$PATH:/home/paul/GridPro/bin
 
 # ParaView
-alias paraview=~/Software/ParaView-4.4.0-Qt4-Linux-64bit/bin/paraview
+export PARAVIEW_HOME=~/Software/ParaView-4.4.0-Qt4-Linux-64bit
