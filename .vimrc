@@ -37,9 +37,18 @@ let g:syntastic_python_checkers=['']
 
 " Colour scheme
 syntax enable
-"set background=dark
-"let g:solarized_termcolors=256
-"colorscheme solarized
+if has('gui_running')
+  set background =dark
+  colorscheme solarized
+endif 
+
+" GUI
+if has('gui_running')
+  set guioptions -=T  " remove toolbar
+  set guioptions -=L  " remove Left scrollbar
+  set guioptions -=r  " remove right scrollbar
+  set guifont =DejaVu\ Sans\ Mono\ 8
+endif
 
 au BufRead *.tex setlocal tw=100
 au BufRead *.rst setlocal tw=100
