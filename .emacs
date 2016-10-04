@@ -39,7 +39,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Ubuntu Mono" :foundry "unknown" :slant normal :weight normal :height 90 :width normal))))
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 90 :width normal))))
  '(powerline-evil-base-face ((t (:inherit mode-line :foreground "dim gray"))))
  '(powerline-evil-emacs-face ((t (:inherit powerline-evil-base-face :background "violet" :weight bold))))
  '(powerline-evil-insert-face ((t (:inherit powerline-evil-base-face :background "blue" :weight bold))))
