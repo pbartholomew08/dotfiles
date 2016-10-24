@@ -39,7 +39,8 @@ let g:syntastic_python_checkers=['']
 syntax enable
 if has('gui_running')
   set background =dark
-  colorscheme solarized
+  "colorscheme solarized
+  colorscheme spacemacs-theme
 endif 
 
 " GUI
@@ -94,7 +95,11 @@ inoremap <C-Space> <C-n>
 inoremap <C-f> <C-\><C-O>:%!astyle<CR>
 nnoremap <C-f> :%!astyle<CR>
 map <C-\> :NERDTreeToggle<CR>
-map <C-b> :! clear && ./.buildScript.sh<CR>
+if has('gui_running')
+  map <C-b> :! ./.buildScript.sh<CR>
+else
+  map <C-b> :! clear && ./.buildScript.sh<CR>
+endif
 map <F3> <C-w><C-]><C-w>T
 map <C-Left> gT
 map <C-Right> gt
