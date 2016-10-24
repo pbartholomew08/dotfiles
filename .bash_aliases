@@ -29,3 +29,6 @@ alias clang-format=clang-format-3.4
 alias paraview=${PARAVIEW_HOME}/bin/paraview
 alias pvpython=${PARAVIEW_HOME}/bin/pvpython
 alias pvbatch=${PARAVIEW_HOME}/bin/pvbatch
+
+# hdf5
+alias h5dump=${PETSC_DIR}/${PETSC_ARCH}/bin/h5dump
