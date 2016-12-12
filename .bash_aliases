@@ -1,6 +1,11 @@
 #!/bin/bash
 
+# Load profile
 source ~/.bash_profile
+
+# Colourise
+alias ls="ls --color=tty"      # Colourise ls
+alias grep="grep --color=auto" # Colourise matces in grep
 
 #alias gmsh=/home/paul/Software/gmsh-2.9.3-Linux/bin/gmsh
 alias gmsh=/home/paul/Software/gmsh-2.10.0-Linux/bin/gmsh
