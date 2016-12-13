@@ -4,6 +4,7 @@
 # Date Created: 12-Dec-2016                                                                       #
 #                                                                                                 #
 # Changes:                                                                                        #
+#   [13-Dec-2016] Ran compinstall (completions for zsh)                                           #
 #   [12-Dec-2016] Running zsh-newuser-install for first time                                      #
 ###################################################################################################
 
@@ -16,6 +17,10 @@ unsetopt autocd beep extendedglob notify
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored
+zstyle ':completion:*' matcher-list ''
+zstyle ':completion:*' verbose true
 zstyle :compinstall filename '/home/paul/.zshrc'
 
 autoload -Uz compinit
