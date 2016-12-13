@@ -13,8 +13,8 @@ alias tetgen=/home/paul/Software/tetgen1.5.0/bin/tetgen
 alias triangle=/home/paul/Software/triangle/bin/triangle
 alias eclipse=/home/paul/Software/eclipse/eclipse
 #alias emacs="env TERM=xterm-256color emacs -nw"
-alias emacs="rm ~/.emacs.d ; rm ~/.emacs ; ln -s ~/.gnuemacs.d ~/.emacs.d && ln -s ~/src/REPOS/git/dotfiles/.emacs ~/.emacs && /usr/local/bin/emacs"
-alias spacemacs="rm ~/.emacs.d ; rm ~/.emacs ; ln -s ~/.spacemacs.d ~/.emacs.d && /usr/local/bin/emacs &"
+#alias emacs="rm ~/.emacs.d ; rm ~/.emacs ; ln -s ~/.gnuemacs.d ~/.emacs.d && ln -s ~/src/REPOS/git/dotfiles/.emacs ~/.emacs && /usr/local/bin/emacs"
+#alias spacemacs="rm ~/.emacs.d ; rm ~/.emacs ; ln -s ~/.spacemacs.d ~/.emacs.d && /usr/local/bin/emacs &"
 alias todo="emacs ~/todo.org"
 alias todoPhD="emacs ~/org/PhD.org"
 
