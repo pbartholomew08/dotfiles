@@ -1,64 +1,87 @@
-;;; .emacs --- Summary
-;; .emacs configuration file
-;;; Commentary:
+;;; .emacs --- emacs configuration file
+;; 
+;; Filename: .emacs
+;; Description: This file is run at emacs startup.
+;; Author: Paul Bartholomew
+;; Maintainer: Paul Bartholomew
+;; Created: Tue Dec 13 09:11:59 2016 (+0000)
+;; Version: 0.0
+;; Package-Requires: ()
+;; Last-Updated: Tue Dec 13 17:33:32 2016 (+0000)
+;;           By: Paul Bartholomew
+;;     Update #: 9
+;; URL: 
+;; Doc URL: 
+;; Keywords: 
+;; Compatibility: 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Commentary: 
+;; 
+;; 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Change Log:
+;;
+;;  [13-Dec-2016] Moving to use header2 to control file changes.
+;;  [13-Dec-2016] Adding some of the 'old' config files to bootstrap.
+;;  [12-Dec-2016] Initialising with Cask and Pallet.
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or (at
+;; your option) any later version.
+;; 
+;; This program is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+;; 
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
 ;;; Code:
+ 
+;;=================================================================================================
+;; Cask and pallet: better package management
+(require 'cask "/home/paul/.cask/cask.el")
+(cask-initialize)
 
-;; Load path
-(add-to-list 'load-path "~/.emacs.d/emacs_config/")
+(require 'pallet)
+(pallet-mode t)
 
-;;==================================================================================================
-;; Standard emacs things, i.e. don't require donwloading / connecting to melpa
-(require 'emacs_appearance) ; my emacs appearance settings
-(require 'emacs_behaviour) ; my emacs behaviour settings (controls default / general emacs behaviours)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; What follows is using the old packages to bootstrap behaviours
 
-;;==================================================================================================
-;; Additional packages (requiring melpa etc.
-(require 'emacs_melpa_load)
+;;=================================================================================================
+;; Loading old config files during transition
+(add-to-list 'load-path "~/src/emacs_config_old")
 
-;;==================================================================================================
-;; Language-specific settings
-(require 'my_python)
-(require 'my_C)
-(require 'my_LaTeX)
+(require 'emacs_appearance)
+(require 'emacs_behaviour)
+
 (require 'my_org)
-(require 'my_elisp)
 
-;;==================================================================================================
-;; Stuff created automatically by emacs
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(display-time-mode t)
- '(font-use-system-font t)
- '(show-paren-mode t)
- '(tool-bar-mode nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 90 :width normal))))
- '(powerline-evil-base-face ((t (:inherit mode-line :foreground "dim gray"))))
- '(powerline-evil-emacs-face ((t (:inherit powerline-evil-base-face :background "violet" :weight bold))))
- '(powerline-evil-insert-face ((t (:inherit powerline-evil-base-face :background "blue" :weight bold))))
- '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "green" :weight bold))))
- '(py-builtins-face ((t (:inherit font-lock-builtin-face :weight bold)))))
+;;-------------------------------------------------------------------------------------------------
+;; header2
+;; Updating headers
+(autoload 'auto-update-file-header "header2")
+(add-hook 'write-file-hooks 'auto-update-file-header)
 
-;;==================================================================================================
-;; Miscellaneous
+;; Creating headers on new files
+(autoload 'auto-make-header "header2")
+(add-hook 'emacs-lisp-mode-hook 'auto-make-header)
 
-;;--------------------------------------------------------------------------------------------------
-;; My keyboard bindings
-(require 'my_kbd)
-
-;;==================================================================================================
-;; evil (vim mode)
-;; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-;; !! This has to be loaded last!               !!
-;; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+;;=================================================================================================
+;; evil should be configured last
 (require 'my_evil)
 
 (provide '.emacs)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; .emacs ends here
