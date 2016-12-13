@@ -8,6 +8,9 @@ export MPI_HOME=/usr
 export SVN_EDITOR=vim
 export PATH=${PATH}:~/bin
 
+# EMACS development
+export PATH=/home/paul/.cask/bin:${PATH}
+
 # General development
 export SRC=~/src
 export C_HOME=${SRC}/C
