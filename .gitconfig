@@ -1,0 +1,11 @@
+[user]
+	name = Paul Bartholomew
+	email = ptb0890@gmail.com
+[core]
+	pager = less -r
+[gui]
+	tabsize = 2
+[merge]
+	ff = false
+[pull]
+	ff = true
